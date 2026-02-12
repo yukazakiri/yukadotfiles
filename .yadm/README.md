@@ -4,18 +4,39 @@ Managed with [yadm](https://yadm.io/) - Yet Another Dotfiles Manager
 
 ## Quick Start
 
-### Installation
+### One-Line Install (Recommended)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yukazakiri/yukadotfiles/main/.local/share/yukadotfiles/install.sh | bash
+```
+
+Or with wget:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/yukazakiri/yukadotfiles/main/.local/share/yukadotfiles/install.sh | bash
+```
+
+### Manual Installation
 
 ```bash
 # Clone your dotfiles
-yadm clone <your-repo-url>
+yadm clone https://github.com/yukazakiri/yukadotfiles.git
 
 # Or install yadm first, then clone
 mkdir -p ~/.local/bin
 curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm
 chmod +x ~/.local/bin/yadm
 export PATH="$HOME/.local/bin:$PATH"
-yadm clone <your-repo-url>
+yadm clone https://github.com/yukazakiri/yukadotfiles.git
+```
+
+### Install Script Location
+
+The install script is at: `~/.local/share/yukadotfiles/install.sh`
+
+You can also run it directly:
+```bash
+~/.local/share/yukadotfiles/install.sh
 ```
 
 ## Usage
