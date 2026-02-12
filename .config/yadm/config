@@ -1,0 +1,3 @@
+# Local configuration for yadm
+# Add any local yadm settings here
+# Example: yadm config local.class work
