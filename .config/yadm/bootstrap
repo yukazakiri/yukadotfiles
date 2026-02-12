@@ -1,0 +1,26 @@
+#!/bin/bash
+# YADM bootstrap script
+# This script runs automatically after cloning your dotfiles to a new machine
+
+set -e
+
+# Add yadm to PATH if installed locally
+export PATH="$HOME/.local/bin:$PATH"
+
+# Install yadm if not present
+if ! command -v yadm &> /dev/null; then
+    echo "Installing yadm..."
+    mkdir -p ~/.local/bin
+    curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm
+    chmod +x ~/.local/bin/yadm
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Update submodules if any
+yadm submodule update --recursive --init
+
+# Decrypt private files (if encrypted)
+# yadm decrypt
+
+echo "Bootstrap complete!"
+echo "Your dotfiles are now set up."
